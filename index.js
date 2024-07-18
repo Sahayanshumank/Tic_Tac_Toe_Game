@@ -3,6 +3,8 @@ let O = document.querySelector(".player-1")
 let X = document.querySelector(".player-2")
 let winBox = document.querySelector(".winner")
 let turnO = true;
+O.style.backgroundColor = "#8C8A93"
+
 
 const winPatterns = [
   [0, 1, 2],
@@ -23,14 +25,14 @@ boxes.forEach((box) => {
     if (turnO) {
       box.innerHTML = "O";
       box.style.color = "rgb(255,0,0)";
-      X.style.backgroundColor = "rgb(194, 21, 73)"
+      X.style.backgroundColor = "#8C8A93"
       O.style.backgroundColor = "transparent"
       turnO = false;
     } else {
       box.innerHTML = "X";
       box.style.color = "rgb(43, 249, 21)";
       X.style.backgroundColor = "transparent"
-      O.style.backgroundColor = "rgb(194, 21, 73)"
+      O.style.backgroundColor = "#8C8A93"
       turnO = true;
     }
     box.disabled = true;
@@ -46,7 +48,7 @@ const disableBoxes = () => {
 };
 
 showWinner=(winner)=>{
-  winBox.innerHTML=`Winner is ${winner}`
+  winBox.innerHTML=`Winner    is    ${winner}`
   winBox.classList.remove("hide")
 }
 
