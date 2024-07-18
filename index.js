@@ -1,5 +1,7 @@
 let boxes = document.querySelectorAll(".box");
-
+let O = document.querySelector(".player-1")
+let X = document.querySelector(".player-2")
+let winBox = document.querySelector(".winner")
 let turnO = true;
 
 const winPatterns = [
@@ -20,9 +22,15 @@ boxes.forEach((box) => {
     // console.log("Box Was Cliked");
     if (turnO) {
       box.innerHTML = "O";
+      box.style.color = "rgb(255,0,0)";
+      X.style.backgroundColor = "rgb(194, 21, 73)"
+      O.style.backgroundColor = "transparent"
       turnO = false;
     } else {
       box.innerHTML = "X";
+      box.style.color = "rgb(43, 249, 21)";
+      X.style.backgroundColor = "transparent"
+      O.style.backgroundColor = "rgb(194, 21, 73)"
       turnO = true;
     }
     box.disabled = true;
@@ -37,6 +45,11 @@ const disableBoxes = () => {
   }
 };
 
+showWinner=(winner)=>{
+  winBox.innerHTML=`Winner is ${winner}`
+  winBox.classList.remove("hide")
+}
+
 const checkWinner = () => {
   for (let patterns of winPatterns) {
     let pos1Val = boxes[patterns[0]].innerHTML;
@@ -45,7 +58,8 @@ const checkWinner = () => {
 
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
-        console.log("Winner", pos1Val);
+        // console.log("Winner", pos1Val);
+        showWinner(pos1Val);
         disableBoxes();
       }
     }
