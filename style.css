@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
 
 * {
   /* height: 100%; */
@@ -8,23 +10,49 @@
   font-family: "Roboto";
 }
 
+.heading{
+  backdrop-filter: blur(10px);
+  width: 30vw;
+  height: 70px;
+  border-radius: 10px;
+  border: 3px solid rgba(61, 59, 59, 0.691);
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: 450px){
+  .heading{
+    margin: 10px;
+    height: 40px;
+  }
+}
+
 h2 {
   font-size: 3vw;
-  font-family: "Roboto";
-  color: #FFFBFC;
-  margin: 10px;
-  padding: 25px;
+  font-family: "Finger Paint";
+  color: #fbff00cf;
+  /* margin: 10px;
+  padding: 25px; */
+  text-transform: uppercase;
 }
 
 @media(max-width: 450px){
   h2 {
-    font-size: 10vw;
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: center;
+    /* font-size: 3vh; */
   }
 }
 
 body {
-  background-color: #010400;
+  /* background-color: #010400; */
   /* height: 100vh; */
+  background-image: url(image5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   border: none;
   display: flex;
   align-items: center;
@@ -34,9 +62,9 @@ body {
 
 .wrapper {
   /* align-items: stretch */
-  height: 30vw;
-  width: 30vw;
-  margin: 25px;
+  height: 25vw;
+  width: 25vw;
+  margin: 10px;
   display: flex;
   flex-wrap: wrap;
   /* box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.641); */
@@ -48,22 +76,26 @@ body {
   .wrapper {
     height: 70vw;
     width: 70vw;
-    margin: 50px;
+    margin: 10px;
   }
 
 }
 .box {
   background-color: transparent;
-  color: white;
-  height: 33.33%;
-  width: 33.33%;
-  margin: 0;
+  color: rgba(37, 56, 34, 0.576);
+  border-radius: 15px;
+  border: 4px solid rgba(45, 49, 45, 0.347);
+  height: 30%;
+  width: 30%;
+  margin: 1.66% 1.66%;
   font-size: 7vw ;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  /* display: flex;
+  font-family: "Finger Paint";
+  backdrop-filter: blur(10px);
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
+  cursor: pointer;
   /* border: 2px solid white; */
 }
 
@@ -73,79 +105,63 @@ body {
   }
 }
 
-.box-1 {
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
-}
-.box-2 {
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
-}
-.box-3 {
-  border-bottom: 5px solid white;
-  /* border-right: 5px solid white; */
-}
-.box-4 {
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
-}
-.box-5 {
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
-}
-.box-6 {
-  border-bottom: 5px solid white;
-  /* border-right: 5px solid white; */
-}
-.box-7 {
-  /* border-bottom: 5px solid white; */
-  border-right: 5px solid white;
-}
-.box-8 {
-  /* border-bottom: 5px solid white; */
-  border-right: 5px solid white;
-}
-/* .box-9{
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
-} */
-
 .player{
   font-size: 30px;
-  color: rgb(204, 198, 198);
+  color: rgba(204, 198, 198, 0.577);
   font-weight: 400;
-  border: 5px solid;
+  border: 3px solid;
   border-radius: 10px;
-  height: 50px;
-  width: 150px;
+  height: 40px;
+  width: 10vw;
+  
+  font-family: "Finger Paint";
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media(max-width: 450px){
+  .player{
+    font-size: 6vw;
+    height: 10vw;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .player-1{
-  color: red;
-  border-color: red;
+  color: rgb(0, 255, 0);
+  border-color: rgb(0, 255, 0);
+  margin: 10px;
 }
 
 .player-2{
-  color: green;
-  border-color: green;
+  color: rgb(255, 0, 0);
+  border-color:  rgb(255, 0, 0);
+  margin: 10px;
 }
 .chance{
   width: 100vw;
-  margin: 15px;
+  margin: 5px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
+@media(max-width: 450px){
+  .chance{
+    margin: 15px;
+  }
+}
+
 .winner{
-  color: white;
-  font-family: "Roboto";
+  color: #fbff00cf;
+  font-family: "Finger Paint";
   font-weight: 400;
-  font-size: 5vw;
-  height: 80vh;
+  font-size: 4vw;
+  height: 10vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -154,11 +170,40 @@ body {
 }
 @media(max-width: 450px){
   .winner{
-    font-size: 15vw;
-    margin: 25px;
+    font-size: 6vw;
+    margin: 10px;
+    height: 20px;
   }
 }
 
 .hide{
   display: none;
 }
+
+#reset{
+  border: none;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgb(41, 54, 41);
+  border-radius: 7px;
+  margin: 10px;
+  height: 50px;
+  width: 12vw;
+  color: #fbff00cf;
+  font-size: 1vw;
+  font-family: "Finger Paint";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media(max-width: 450px){
+  #reset{
+    width: 40vw;
+  }
+}
+
+.win-bg{
+  background-color: #fbff0079;
+}
+
+

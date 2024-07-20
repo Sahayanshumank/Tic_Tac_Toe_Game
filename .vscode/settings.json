@@ -1,4 +1,4 @@
 {
-    "livePreview.customExternalBrowser": "Chrome",
-    "liveServer.settings.port": 5501
+    "livePreview.customExternalBrowser": "Edge",
+    "liveServer.settings.port": 5500
 }
