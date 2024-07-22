@@ -1,13 +1,11 @@
 let boxes = document.querySelectorAll(".box");
-// let box = document.querySelector(".box");
 let O = document.querySelector(".player-1");
 let X = document.querySelector(".player-2");
 let winBox = document.querySelector(".winner");
 let resetGame = document.querySelector("#reset");
 let turnO = true;
+window.myGlobalVar = turnO;
 O.style.backgroundColor = "rgba(37, 56, 34)";
-
-// console.log(boxes)
 
 const winPatterns = [
   [0, 1, 2],
@@ -24,7 +22,6 @@ const winPatterns = [
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
-    // console.log("Box Was Cliked");
     if (turnO) {
       box.innerHTML = "O";
       box.style.color = "rgb(0,255,0)";
@@ -58,33 +55,21 @@ showWinner = (winner) => {
 const checkWinner = () => {
   for (let patterns of winPatterns) {
     let pos1Val = boxes[patterns[0]].innerHTML;
-    // console.log(boxes[patterns[0]])
     let pos2Val = boxes[patterns[1]].innerHTML;
-    // console.log(boxes[patterns[1]])
     let pos3Val = boxes[patterns[2]].innerHTML;
-    // console.log(boxes[patterns[2]])
 
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
-        // console.log("Winner", pos1Val);
         showWinner(pos1Val);
         disableBoxes();
+        X.style.backgroundColor = "transparent";
+        O.style.backgroundColor = "transparent";
         if (pos1Val === "O") {
           turnO = false;
-          // console.log("winner=0")
         } else {
           turnO = true;
         }
-        X.style.backgroundColor = "transparent";
-        O.style.backgroundColor = "transparent";
-        if (turnO = true) {
-          O.style.backgroundColor = "rgba(37, 56, 34)";
-        } else {
-          X.style.backgroundColor = "rgba(37, 56, 34)";
-        }
-        // boxes[patterns[0]].style.backgroundColor = "#fbff0079";
-        // boxes[patterns[1]].style.backgroundColor = "#fbff0079";
-        // boxes[patterns[2]].style.backgroundColor = "#fbff0079";
+
         boxes[patterns[0]].classList.add("win-bg");
         boxes[patterns[1]].classList.add("win-bg");
         boxes[patterns[2]].classList.add("win-bg");
@@ -93,16 +78,19 @@ const checkWinner = () => {
   }
 };
 
-boxes.forEach((box) => {
-  resetGame.addEventListener("click", () => {
+resetGame.addEventListener("click", () => {
+  boxes.forEach((box) => {
     box.disabled = false;
-    // console.log("Hello");
     box.innerHTML = "";
     box.classList.remove("win-bg");
-    // turnO = true;
     winBox.classList.add("hide");
-    
-    
-    // boxes.style.backgroundColor = "White"
   });
+  console.log(turnO);
+  if (turnO === true) {
+    O.style.backgroundColor = "rgba(37, 56, 34)";
+    console.log("O");
+  } else {
+    X.style.backgroundColor = "rgba(37, 56, 34)";
+    console.log("X");
+  }
 });
